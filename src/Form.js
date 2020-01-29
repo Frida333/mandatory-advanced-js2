@@ -1,0 +1,62 @@
+import React from 'react';
+
+export default class Form extends React.Component {
+  render(){
+    return(
+      <div className="form">
+        <form onSubmit={this.props.submitChanges}>
+          <p>Title</p>
+          <input
+            placeholder="Title"
+            type="text"
+            value={this.props.movieForm.title}
+            id="title"
+            minLength="1"
+            maxLength="40"
+            required
+            onChange={this.props.onUpdateState}
+          />
+          <p>Director</p>
+          <input
+            placeholder="Director"
+            type="text"
+            value={this.props.movieForm.director}
+            id="director"
+            minLength="1"
+            maxLength="40"
+            required
+            onChange={this.props.onUpdateState}
+          />
+          <p>Description</p>
+          <input
+            placeholder="Description"
+            type="text"
+            value={this.props.movieForm.description}
+            id="description"
+            minLength="1"
+            maxLength="300"
+            required
+            onChange={this.props.onUpdateState}
+          />
+          <p>Rating</p>
+          <input
+            placeholder="Rating"
+            type="number"
+            value={this.props.movieForm.rating}
+            id="rating"
+            min="0"
+            max="5"
+            step="0.1"
+            required
+            onChange={this.props.onUpdateState}
+          />
+          <p>Send</p>
+          <input
+            type="submit"
+            value="Send"
+          />
+        </form>
+      </div>
+    )
+  }
+}
